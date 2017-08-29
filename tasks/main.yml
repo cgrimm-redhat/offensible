@@ -1,2 +1,24 @@
 ---
-# tasks file for offensible
+---
+- name: Validate Linux OS
+  fail:
+      msg: "This can only be run against Linux Targets."
+  tags:
+      - linux
+
+- name: Validate Windows OS
+  fail:
+      msg: "This can only be run against Windows Targets."
+  tags:
+      - windows
+
+- name: Run Linux based attacks
+  include: linux-attack.yml
+  tags:
+      - linux
+
+- name: Run Windows based attacks
+  include: win-attack.yml
+  tags:
+      - windows
+
