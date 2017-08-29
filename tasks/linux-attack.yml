@@ -1,0 +1,14 @@
+---
+- name: Install Netcat Fedora or RHEL
+  yum:
+      name: nc.x86_x64
+      state: latest
+  when:
+      - ansible_distribution == 'Fedora'
+
+- name: Install Netcat Debian
+  apt:
+     name: netcat
+     state: latest
+  when:
+      - ansible_os_family == 'Debian'
