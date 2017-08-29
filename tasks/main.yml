@@ -1,5 +1,11 @@
 ---
----
+- name: Check Ansible version
+  fail:
+      msg: You must use ansible 2.1 or greater
+  when: not ansible_version.ful | version_compare('2.1', '>=')
+  tags:
+      - always
+
 - name: Validate Linux OS
   fail:
       msg: "This can only be run against Linux Targets."
