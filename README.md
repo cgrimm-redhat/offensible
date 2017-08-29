@@ -1,12 +1,13 @@
 Role Name
 =========
+**This role is under active development**
 
-A brief description of the role goes here.
+This role provides tools necessary to manage both Linux and Windows targets for penetration testing
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Ansible version 2.1 or greater
 
 Role Variables
 --------------
@@ -16,17 +17,24 @@ A description of the settable variables for this role should go here, including 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No current dependencies
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+- name: Offensibe Main Playbook 
+  hosts: target 
+  become: true
+  roles:
+    - offensible
 
+Example Execution Command
+------------------
+
+ansible-playbook playbook.yml --tags "linux,windows"
+  
 License
 -------
 
@@ -35,4 +43,5 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Christopher Grimm <cgrimm@redhat.com>, [Github](https://githubs.com/cgrimm-redhat)
+
