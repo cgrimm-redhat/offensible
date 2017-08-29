@@ -24,11 +24,11 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-- name: Offensibe Main Playbook 
-  hosts: target 
-  become: true
-  roles:
-    - offensible
+     - name: Offensibe Main Playbook 
+       hosts: target 
+       become: true
+       roles:
+          - offensible
 
 Example Execution Command
 ------------------
