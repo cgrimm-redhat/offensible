@@ -1,0 +1,11 @@
+---
+# This is an example of the playbook utilized to call Offensible Role.
+# Ensure that you store the role in a valid roles directory identified in ansible.cfg
+- name: Offensibe Main Playbook 
+  hosts: target 
+  become: true
+  roles:
+    - offensible  
+  
+
+        
