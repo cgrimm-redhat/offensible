@@ -1,6 +1,6 @@
 ---
 - name: Create Persistence & Reverse Shell
-  hosts: target 
+  hosts: ec2 
   become: no 
   tasks:
     - name: Get Reverse Shell Executable
